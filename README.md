@@ -36,6 +36,11 @@ Connect RESTy to live APIs, fetching and displaying remote data. Our primary foc
 Your implementation should allow the user to set a url, method, and request body.
 - Make sure all relavent request and response data is displayed to the User.
 
+### Phase 4
+Track every API call and storing it in history.
+
+- Replace any component state managements to use derived state from `useReducer` with a reducer function and intitial state.
+
 ### Grading Standards & Notes
 
 - Features
