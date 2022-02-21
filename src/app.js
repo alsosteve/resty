@@ -24,7 +24,7 @@ function App() {
 
   let callApi = (requestParams) => {
     // mock output
-    const data = {
+    let newData = {
       count: 2,
       results: [
         {name: 'fake thing 1', url: 'http://fakethings.com/1'},
@@ -34,6 +34,9 @@ function App() {
 
     // // Refactor any components using this.setState
     // this.setState({data, requestParams});
+    
+    setData(newData);
+    setRequestParams(requestParams);
   }
 
  
