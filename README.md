@@ -37,6 +37,6 @@ You will be refactoring all child components of the `App` component from `Class`
 - Documentation
   - Quality README
 
-### Lab Assistance Notes
+### Approach & Efficiency
 
-- The first and most important part of the lab assignment is to draw a process diagram of the starter code and state as events happen. Once the students understand that, they can move on.
+- Coded with assistance by Joey Hernandez and Emily Landers.
