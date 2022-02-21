@@ -9,11 +9,15 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
+import History from './components/history';
+
 
 function App() {
    //  implement the useState react API hook
    let [data, setData] = useState({}); 
    let [requestParams, setRequestParams] = useState({}); 
+
+   let [historyData, setHistoryData] = useState([]); 
 
   // constructor(props) {
   //   super(props);
@@ -35,7 +39,12 @@ function App() {
     await axios.get(requestParams.url)
     .then((json) => {
       setData(json)
-
+      let historyPush = {
+        method: `${requestParams.method}`, 
+        url: `${requestParams.url}`,
+        data: json
+      }
+      setHistoryData(historyData.push(historyPush))
     })
     .catch((e) => {
       console.log('Error', e);
@@ -58,6 +67,7 @@ function App() {
       <div>URL: {requestParams.url}</div>
       <Form handleApiCall={callApi} />
       <Results data={data} />
+      <History historyData={historyData}/>
       <Footer />
     </React.Fragment>
   );
