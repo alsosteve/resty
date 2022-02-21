@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useState } from 'react';
 import './app.scss';
 
 // Let's talk about using index.js and some other name in the component folder
@@ -9,40 +9,48 @@ import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
 
-class App extends React.Component {
+function App() {
+   //  implement the useState react API hook
+   let [data, setData] = useState({}); 
+   let [requestParams, setRequestParams] = useState({}); 
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-      requestParams: {},
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     data: null,
+  //     requestParams: {},
+  //   };
+  // }
 
-  callApi = (requestParams) => {
+  let callApi = (requestParams) => {
     // mock output
-    const data = {
+    let newData = {
       count: 2,
       results: [
         {name: 'fake thing 1', url: 'http://fakethings.com/1'},
         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
       ],
     };
-    this.setState({data, requestParams});
+
+    // // Refactor any components using this.setState
+    // this.setState({data, requestParams});
+    
+    setData(newData);
+    setRequestParams(requestParams);
   }
 
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <div>Request Method: {this.state.requestParams.method}</div>
-        <div>URL: {this.state.requestParams.url}</div>
-        <Form handleApiCall={this.callApi} />
-        <Results data={this.state.data} />
-        <Footer />
-      </React.Fragment>
-    );
-  }
+ 
+  return (
+    <React.Fragment>
+      <Header />
+      <div>Request Method: {requestParams.method}</div>
+      <div>URL: {requestParams.url}</div>
+      <Form handleApiCall={callApi} />
+      <Results data={data} />
+      <Footer />
+    </React.Fragment>
+  );
+  
 }
 
 export default App;

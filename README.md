@@ -2,6 +2,7 @@
 An API testing tool that can be run in any browser, allowing a user to easily interact with APIs in a familiar interface.
 
 ## UML Diagram
+![Resty Uml](./img/resty-uml.png)
 
 ## Getting Started
 
@@ -12,7 +13,7 @@ This folder only contains the components required for your React Application.
 1. Run `npm start` to visually validate that your starter-code components are working properly.
 
 ## Lab Requirements
-
+### Phase 1
 You will be refactoring all child components of the `App` component from `Class` components to `function` components.
 
 - Keep `App.js` a class component for now.
@@ -21,6 +22,12 @@ You will be refactoring all child components of the `App` component from `Class`
 - Import them into the `App` Component using ES6 `import` statement.
 - Proper state management.
 - Button Handlers.
+
+### Phase 2
+Receiving user input in preparation of connecting to live APIs, using the `useState()` hook in our functional components
+
+- Refactor any components using this.setState to implement the useState react API hook.
+- Refactor the Form Component to implement user input from form elements, instead of hard coded string values.
 
 ### Grading Standards & Notes
 
