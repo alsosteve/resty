@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 import './app.scss';
 
 // Let's talk about using index.js and some other name in the component folder
@@ -22,22 +23,32 @@ function App() {
   //   };
   // }
 
-  let callApi = (requestParams) => {
-    // mock output
-    let newData = {
-      count: 2,
-      results: [
-        {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-        {name: 'fake thing 2', url: 'http://fakethings.com/2'},
-      ],
+  let callApi = async (requestParams) => {
+    // // mock output
+    // let newData = {
+    //   count: 2,
+    //   results: [
+    //     {name: 'fake thing 1', url: 'http://fakethings.com/1'},
+    //     {name: 'fake thing 2', url: 'http://fakethings.com/2'},
+    //   ],
+    setRequestParams(requestParams);
+    await axios.get(requestParams.url)
+    .then((json) => {
+      setData(json)
+
+    })
+    .catch((e) => {
+      console.log('Error', e);
+      setData('Invalid URL');
+    });
     };
 
     // // Refactor any components using this.setState
     // this.setState({data, requestParams});
     
-    setData(newData);
-    setRequestParams(requestParams);
-  }
+    // setData(newData);
+    
+  
 
  
   return (
