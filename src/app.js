@@ -29,6 +29,8 @@ class App extends React.Component {
       ],
     };
     this.setState({data, requestParams});
+    let [data, setData] = useState({}); 
+    let [requestParams, setRequestParams] = useState({}); 
   }
 
   render() {
