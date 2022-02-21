@@ -29,6 +29,13 @@ Receiving user input in preparation of connecting to live APIs, using the `useSt
 - Refactor any components using this.setState to implement the useState react API hook.
 - Refactor the Form Component to implement user input from form elements, instead of hard coded string values.
 
+### Phase 3
+Connect RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
+
+- Refactor application methods to allow for browser side HTTP requests to be sent.
+Your implementation should allow the user to set a url, method, and request body.
+- Make sure all relavent request and response data is displayed to the User.
+
 ### Grading Standards & Notes
 
 - Features
